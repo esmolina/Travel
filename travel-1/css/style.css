@@ -1,73 +1,435 @@
-/* Fonts */
+/* Fonts styles start */
 @font-face {
   font-family:'Red Hat Text';
-  src: url("assets/fonts/RedHatText-Medium.ttf");
+  src: url("../assets/fonts/RedHatText-Medium.ttf");
   font-weight: 500;
 }
+
+@font-face {
+  font-family:'Aleo';
+  src: url("../assets/fonts/Aleo-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family:'Aleo';
+  src: url("../assets/fonts/Aleo-BoldItalic.ttf");
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family:'Aleo';
+  src: url("../assets/fonts/Aleo-Italic.ttf");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family:'Aleo';
+  src: url("../assets/fonts/Aleo-Regular.ttf");
+  font-weight: 400;
+}
+
+/* Fonts styles end */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/** box-sizing is a rule for blocks size, inherit means it's a rule for all child-elemnts too*/
+
+/* body {
+  font-family:'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+} */
+/** defolt settings if the customer wants to add something to any block*/
+
+/* .justify-body {
+  overflow-y: auto;
+} */
 
 .container {
   width: 1440px;
+  margin: auto;
 }
 
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/** wrapper used for content placements*/
 
-/* Header */
-.button {
-  display: flex;
-  flex-direction: row;
+/* Titles */
+.block-title {
+  display:flex;
   justify-content: center;
-  align-items: center;
-  padding: 10px 30px;
-
-  position: absolute;
-  width: 103px;
-  height: 41px;
-  left: 1217px;
-  top: 25px;
-
-  background: #0D606F;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
-  border-radius: 10px;
-
+  weight: 100%;
+  height: 53px;
   font-family:'Red Hat Text', sans-serif;
+  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 21px;
-  color: #FFFFFF;
+  font-size: 40px;
+  line-height: 53px;
+  text-transform: uppercase;
+  color: #F2785C;
 }
+
+/* Header styles start */
 .header {
-  display: inline-block;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */ /**not used for this project*/
   height: 90px;
   box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
-  background-color: rgba(242, 120, 92, 0.7);
-  background-image: url(assets/img/header/garrett-parker-DlkF4-dbCOU-unsplash.jpg);
+  background:  linear-gradient(rgba(242, 120, 92, 0.7), rgba(242, 120, 92, 0.7)), url('../assets/img/header/bgtop.jpg');
+  /* background: url('../assets/img/header/bgtop.jpg'); */
+  background-repeat: no-repeat;
+  background-position: center 0;
 }
-.vector {
-  margin: 26 0 34 120;
+
+/* .header-bg-gradient {
+  height:100%;
+  background:rgba(242, 120, 92, 0.7);
+  box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+} */
+/** Background way-2*/
+
+.header-background-image {
+  height: 90px;
+  box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
 }
-.travel-portal {
-  position: absolute;
-  margin: 25 158 34 156;
+
+.header-wrapper {
+  display: flex;
+  flex-wrap: wrap; /**to move to another line*/
+  align-items: center;
+  justify-content: space-between;
+  }
+
+.margin_for_logo {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  z-index: 3;
+}
+
+.margin_for_logo:hover,
+.margin_for_logo:focus,
+.margin_for_logo:active {
+  opacity: .80;
+  transition: 0.2s;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap; /**to move to another line*/
+  margin-top: 35px;
 }
 
 .nav-item {
+  margin-right: 42px;
   font-family:'Red Hat Text', sans-serif;
+  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
   color: #FFFFFF;
+  z-index: 3;
 }
+
+.nav-item:last-child {
+  margin-right: 0px; /** for last element on list */
+}
+
 .nav-link {
   text-decoration: none;
   transition: .3s;
   color: #FFFFFF;
 }
-.nav-list {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  opacity: .80;
 }
 
-/* Main */
-.main {
-  background-image: url(assets/img/header/bgtop.jpg);
+/* Header styles end */
+
+/** Main styles start */
+/* Main: section Plan your trip start */
+.planning {
+  padding-top: 32px;
+  background-image: url('../assets/img/header/bgtop.jpg');
+  background-repeat: no-repeat;
+  background-position: center -90px;
+  min-height: 765px;
 }
+
+.planning-title {
+  max-width: 892px;
+  margin-bottom: 32px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 96px;
+  color: #FFFFFF;
+}
+
+.planning-subtitle {
+  margin-bottom: 46px;
+  font-family: 'Aleo';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.inputRectangle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 95px;
+  width: 892px;
+  margin-bottom: 334px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+}
+
+input::placeholder {
+  font-family: 'Aleo';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F2785C;
+}
+
+.label {
+  width: 560px;
+  height: 22px;
+  padding: 32px 45px 41px 41px;
+  background: rgba( 0,0,0,0);
+  border: none;
+  outline: none;
+  font-family: 'Aleo';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+/* Main: section Plan your trip end */
+
+/* Main: section 3 steps start*/
+.steps-title {
+  margin-bottom: 40px;
+}
+
+.steps-grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 247px 613px 317px;
+  grid-template-rows:100px 54px;
+  margin-bottom: 97px;
+  font-family:'Aleo';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+}
+
+.steps-description {
+  font-family:'Aleo';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+}
+
+.steps-description:hover,
+.steps-description:focus,
+.steps-description:active {
+  opacity: .80;
+  transition: 0.2s;
+}
+
+.velo-img {
+  max-width: 100%;
+  height: auto;
+  padding: 28px 25px 27px;
+  border-radius: 16px;
+  background: #F2785C;
+ }
+
+ .calendar-img {
+  max-width: 100%;
+  height: auto;
+  padding: 24px;
+  margin-left: 68px;
+  border-radius: 16px;
+  background: #F2785C;
+ }
+ .plane-img {
+  max-width: 100%;
+  height: auto;
+  padding: 28px 20px 27px;
+  border-radius: 16px;
+  background: #F2785C;
+ }
+.calendar {
+  margin-left: 56px;
+}
+ .velo-img:,
+ .calendar-img,
+ .plane-img,
+ .velo,
+ .calendar,
+ .plane {
+  align-self : end;
+ }
+
+ .velo-img:hover,
+ .calendar-img:hover,
+ .plane-img:hover,
+ .velo-img:focus,
+ .calendar-img:focus,
+ .plane-img:focus,
+ .velo-img:focus,
+ .calendar-img:active,
+ .plane-img:active,
+ .story-link:active {
+  opacity: .80;
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+/* Main: section 3 steps end */
+
+/** Main: section Destinations in slider.css */
+
+/* Main: section Stories start*/
+.stories-title {
+  margin-bottom: 40px;
+}
+
+.stories-section-background {
+  background: url('../assets/img/footer/footerbg.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  bottom: -61px;
+}
+
+.stories-gradient {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 400px auto;
+  column-gap: 40px;
+  margin-bottom: 30px;
+}
+
+.story:first-child {
+  padding-top: 40px;
+}
+
+.story-picture {
+  filter: drop-shadow(0px 4px 4px #0D606F);
+  border-radius: 16px;
+}
+
+.story-title {
+  margin-bottom: 24px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 42px;
+  color: #0D606F;
+}
+
+.story-description {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+}
+
+.story-link{
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+}
+
+.story-link:hover,
+.story-link:focus,
+.story-link:active {
+  opacity: .80;
+  transition: 0.2s;
+}
+
+/* Main: section Stories end */
+/* Main styles end */
+
+/* Footer styles start*/
+.footer-bg {
+  height: 61px;
+  background: url('../assets/img/footer/footerbg.jpg');
+  background-position: center -1270px;
+}
+
+.footer-justify {
+  min-height: 61px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.empty {
+  width: 142px;
+}
+
+.rights {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+
+.icon-link:hover,
+.icon-link:focus,
+.icon-link:active {
+  opacity: .80;
+  transition: 0.2s;
+}
+.icon-link{
+  margin-right: 24px;
+}
+.twitter-margin {
+  margin-right: 3px;
+  }
+/* Footer styles end */
+
